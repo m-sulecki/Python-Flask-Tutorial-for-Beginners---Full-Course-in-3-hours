@@ -14,6 +14,8 @@
     <form action='/posts' method='POST'>
         Title: <input type="text" name="title" id="title">
         <br>
+        Author: <input type="text" name="author" id="author">
+        <br>
         Post: <input type="text" name="content" id="content">
         <br>
         <input type="submit" value="Post">
@@ -30,6 +32,9 @@
         {% endif %}
 
         <p>{{ post.content }}</p>
+        <a href="/posts/delete/{{post.id}}">Delete</a>
+        <a href="/posts/edit/{{post.id}}">Edit</a>
+        <hr>
     {% endfor %}
 
 {% endblock %}
